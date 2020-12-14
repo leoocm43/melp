@@ -6,13 +6,11 @@ const fs = require("fs");
 const fastcsv = require("fast-csv");
 const {Pool} = require('pg')
 
-const pool = new Pool(({
-    host: 'localhost',
-    user: 'postgres',
-    password: 'postgres',
-    database: 'restaurants',
-    port: '5432'
-}))
+const connectionString = "postgres://prieupafdleajx:0ed0f64c542b224fbba962dd21ebe0b193cb8c18d776159677903e32d40ef3e7@ec2-3-220-98-137.compute-1.amazonaws.com:5432/dfvst9inmj8317"
+
+const pool = new Pool({
+    connectionString,
+})
 
 
 //Unomment below if database does not exist
