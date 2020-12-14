@@ -6,7 +6,8 @@ const fs = require("fs");
 const fastcsv = require("fast-csv");
 const {Pool} = require('pg')
 
-const connectionString = "postgres://prieupafdleajx:0ed0f64c542b224fbba962dd21ebe0b193cb8c18d776159677903e32d40ef3e7@ec2-3-220-98-137.compute-1.amazonaws.com:5432/dfvst9inmj8317"
+//Heroku DB
+const connectionString = process.env.DB
 
 const pool = new Pool({
     connectionString,
@@ -70,5 +71,5 @@ app.use(cookieParser());
 // Routes
 app.use('/', require('./routes/index'));
 
-app.listen(3000);
-console.log('Server on port', 3000);
+app.listen(process.env.PORT);
+console.log('Server on .PORT', process.envPORT);
