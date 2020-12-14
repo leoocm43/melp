@@ -1,6 +1,6 @@
 CREATE DATABASE restaurants
 
-CREATE TABLE restaurant(
+CREATE TABLE IF NOT EXISTS restaurant(
     id TEXT PRIMARY KEY, 
 
             rating INTEGER, 
