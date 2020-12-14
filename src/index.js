@@ -14,34 +14,10 @@ const pool = new Pool(({
     port: '5432'
 }))
 
-// 
 
-
-//Uncomment below if database or table does not exist
+//Unomment below if database does not exist
 //pool.query('CREATE DATABASE restaurants')
-/*pool.query('CREATE TABLE restaurant(
-    id TEXT PRIMARY KEY, 
-
-    rating INTEGER, 
-
-    name TEXT, 
-
-    site TEXT, 
-
-    email TEXT,
-
-    phone TEXT,
-
-    street TEXT,
-
-    city TEXT,
-
-    state TEXT,
-
-    lat FLOAT, 
-
-    lng FLOAT 
-)')*/
+pool.query('CREATE TABLE IF NOT EXISTS restaurant( id TEXT PRIMARY KEY, rating INTEGER, name TEXT, site TEXT, email TEXT,phone TEXT,street TEXT,city TEXT,state TEXT,lat FLOAT, lng FLOAT )')
 
 
 let stream = fs.createReadStream("./csv/restaurants.csv");
