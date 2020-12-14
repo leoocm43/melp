@@ -3,7 +3,7 @@ const router = Router();
 const {getRestaurants, insertRest, getRestaurantsById, updateRest, deleteRest} = require('../controllers/restaurants')
 
 router.get('/', (req, res, next) => {
-    res.status(200).json({ msg: 'Working' });
+    res.status(200).json({ msg: 'Welcome to MELP API' });
   });
 
 router.get('/restaurants', getRestaurants)
