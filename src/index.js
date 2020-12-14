@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
@@ -72,4 +74,4 @@ app.use(cookieParser());
 app.use('/', require('./routes/index'));
 
 app.listen(process.env.PORT);
-console.log('Server on .PORT', process.envPORT);
+console.log('Server on PORT', process.env.PORT);
