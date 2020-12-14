@@ -9,7 +9,7 @@ const fastcsv = require("fast-csv");
 const {Pool} = require('pg')
 
 //Heroku DB
-const connectionString = process.env.DB
+const connectionString = process.env.DATABASE_URL
 
 const pool = new Pool({
     connectionString,
